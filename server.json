@@ -1,0 +1,75 @@
+{
+  "products": [
+    {
+      "id": "123",
+      "title": "Smartphone S1 64gb 5G NFC",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 2798,
+      "category_id": 987
+    },
+    {
+      "id": "1234",
+      "title": "Smartphone P4 32gb 4G WiFi",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 2342,
+      "category_id": 987
+    },
+    {
+      "id": "12345",
+      "title": "Smartphone F2 16gb 4G NFC",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 1916,
+      "category_id": 987
+    },
+    {
+      "id": "123456",
+      "title": "Smartphone K8 16gb 4G WiFi",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 1420,
+      "category_id": 987
+    },
+    {
+      "id": "1234567",
+      "title": "Notebook N10 Quad Core 16gb DDR4 2TB HDD",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 3751,
+      "category_id": 9876
+    },
+    {
+      "id": "12345678",
+      "title": "SmartWatch W10",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 359,
+      "category_id": 98765
+    },
+    {
+      "id": "123456789",
+      "title": "Headphone HD100",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
+      "price": 127,
+      "category_id": 987654
+    }
+  ],
+  "categories": [
+    {
+      "id": "987",
+      "title": "Smartphones",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+    },
+    {
+      "id": "9876",
+      "title": "Notebooks",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+    },
+    {
+      "id": "98765",
+      "title": "Smart Watches",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+    },
+    {
+      "id": "987654",
+      "title": "Headphones",
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+    }
+  ]
+}
