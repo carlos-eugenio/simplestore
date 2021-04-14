@@ -51,7 +51,7 @@ export const BackgroundImageDarken = styled.View`
 
 export const CategoryTitle = styled.Text`
   color: #fff;
-  font-family: 'RobotoCondensed-Bold';
+  font-family: 'RobotoCondensed-Regular';
   text-align: center;
   font-size: 32px;
   padding: 0 20px;
