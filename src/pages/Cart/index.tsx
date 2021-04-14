@@ -1,5 +1,7 @@
 import React from 'react';
 
+import FloatingCart from '../../components/FloatingCart';
+
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import {
@@ -130,6 +132,7 @@ const Cart: React.FC = () => {
           )}
         />
       </ProductContainer>
+      <FloatingCart />
     </Container>
   );
 };

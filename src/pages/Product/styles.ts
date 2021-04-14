@@ -17,6 +17,7 @@ export const Container = styled.SafeAreaView`
 export const ProductContainer = styled.View`
   flex: 1;
   margin: 0 10px;
+  padding-bottom: 60px;
 `;
 
 export const ProductGallery = styled.View`

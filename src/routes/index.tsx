@@ -16,7 +16,7 @@ const Routes = createStackNavigator();
 
 const AppRoutes: React.FC = () => (
   <Routes.Navigator
-    initialRouteName="Home"
+    initialRouteName="Cart"
     screenOptions={{
       headerStyle: {
         height: 80,
