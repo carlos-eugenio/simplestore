@@ -18,6 +18,7 @@ export const ProductContainer = styled.View`
   flex: 1;
   flex-direction: row;
   margin: 0 10px;
+  padding-bottom: 60px;
 `;
 
 export const ProductList = styled(
@@ -64,7 +65,7 @@ export const ProductTitle = styled.Text`
   align-self: flex-start;
   padding: 60px 20px 30px 20px;
   color: #fff;
-  font-family: 'RobotoCondensed-Bold';
+  font-family: 'RobotoCondensed-Regular';
   font-size: 18px;
 `;
 

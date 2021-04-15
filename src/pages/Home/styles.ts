@@ -16,6 +16,7 @@ export const CategoryContainer = styled.View`
   flex: 1;
   flex-direction: row;
   margin: 0 10px;
+  padding-bottom: 60px;
 `;
 
 export const CategoryList = styled(
@@ -51,7 +52,7 @@ export const BackgroundImageDarken = styled.View`
 
 export const CategoryTitle = styled.Text`
   color: #fff;
-  font-family: 'RobotoCondensed-Bold';
+  font-family: 'RobotoCondensed-Regular';
   text-align: center;
   font-size: 32px;
   padding: 0 20px;

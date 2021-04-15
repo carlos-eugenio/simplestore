@@ -18,6 +18,7 @@ export const ProductContainer = styled.View`
   flex: 1;
   flex-direction: row;
   margin: 0 10px;
+  padding-bottom: 60px;
 `;
 
 export const ProductList = styled(
@@ -63,14 +64,15 @@ export const TitlePriceContainer = styled.View`
 
 export const ProductTitle = styled.Text`
   color: #fff;
-  font-family: 'RobotoCondensed-Bold';
+  font-family: 'RobotoCondensed-Regular';
   font-size: 18px;
 `;
 
 export const ProductPrice = styled.Text`
   font-size: 18px;
   color: #fff;
-  font-family: 'RobotoCondensed-Bold';
+  font-family: 'RobotoCondensed-Regular';
+  padding-top: 5px;
 `;
 
 export const ProductButton = styled.TouchableOpacity``;

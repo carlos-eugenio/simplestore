@@ -1,5 +1,7 @@
 import React from 'react';
 
+import FloatingCart from '../../components/FloatingCart';
+
 import {
   Container,
   ProductContainer,
@@ -92,6 +94,7 @@ const Search: React.FC = () => {
           )}
         />
       </ProductContainer>
+      <FloatingCart />
     </Container>
   );
 };

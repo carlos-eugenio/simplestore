@@ -1,5 +1,7 @@
 import React from 'react';
 
+import FloatingCart from '../../components/FloatingCart';
+
 import {
   Container,
   CategoryContainer,
@@ -67,6 +69,7 @@ const Home: React.FC = () => {
           )}
         />
       </CategoryContainer>
+      <FloatingCart />
     </Container>
   );
 };
