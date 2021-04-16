@@ -3,73 +3,223 @@
     {
       "id": "123",
       "title": "Smartphone S1 64gb 5G NFC",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 2798,
-      "category_id": 987
+      "short_title": "Smartphone S1 64gb 5G",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["silver", "black", "red"],
+      "reviews": 451,
+      "price": 429.25,
+      "category_id": 1
     },
     {
       "id": "1234",
       "title": "Smartphone P4 32gb 4G WiFi",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 2342,
-      "category_id": 987
+      "short_title": "Smartphone P4 32gb 4G",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["silver", "yellow", "red"],
+      "reviews": 165,
+      "price": 345.85,
+      "category_id": 1
     },
     {
       "id": "12345",
       "title": "Smartphone F2 16gb 4G NFC",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 1916,
-      "category_id": 987
+      "short_title": "Smartphone F2 16gb 4G",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["gold", "black", "blue"],
+      "reviews": 645,
+      "price": 298.85,
+      "category_id": 1
     },
     {
       "id": "123456",
       "title": "Smartphone K8 16gb 4G WiFi",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 1420,
-      "category_id": 987
+      "short_title": "Smartphone K8 16gb 4G",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["silver", "gold", "red"],
+      "reviews": 321,
+      "price": 247.85,
+      "category_id": 1
     },
     {
       "id": "1234567",
-      "title": "Notebook N10 Quad Core 16gb DDR4 2TB HDD",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 3751,
-      "category_id": 9876
+      "title": "Smartphone J25 8gb 3G",
+      "short_title": "Smartphone J25 8gb 3G",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["silver", "black", "green"],
+      "reviews": 987,
+      "price": 229.85,
+      "category_id": 1
     },
     {
       "id": "12345678",
-      "title": "SmartWatch W10",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 359,
-      "category_id": 98765
+      "title": "Smartphone G8 128gb 5G NFC",
+      "short_title": "Smartphone G8 128gb 5G",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["silver", "black", "blue"],
+      "reviews": 57,
+      "price": 682.22,
+      "category_id": 1
     },
     {
       "id": "123456789",
+      "title": "Laptop N10 Quad Core 16gb DDR4 2TB HDD",
+      "short_title": "Laptop N10 Quad Core",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion",
+      "color": ["silver"],
+      "reviews": 65,
+      "price": 3741.20,
+      "category_id": 2
+    },
+    {
+      "id": "12345678910",
+      "title": "SmartWatch W10",
+      "short_title": "SmartWatch W10",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Connectivity: WiFi, Bluetooth\nBattery: 4750 mah lithium-ion",
+      "color": ["black"],
+      "reviews": 6,
+      "price": 141.20,
+      "category_id": 3
+    },
+    {
+      "id": "1234567891011",
       "title": "Headphone HD100",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg",
-      "price": 127,
-      "category_id": 987654
+      "short_title": "Headphone HD100",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Connectivity: WiFi, Bluetooth\nBattery: 4750 mah lithium-ion",
+      "color": ["silver"],
+      "reviews": 14,
+      "price": 101.54,
+      "category_id": 4
+    },
+    {
+      "id": "123456789101112",
+      "title": "Phone Charger for J9 Smartphone",
+      "short_title": "Charger for J9 Smartphone",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Battery: 4750 mah lithium-ion",
+      "color": ["black"],
+      "reviews": 2,
+      "price": 41.20,
+      "category_id": 5
+    },
+    {
+      "id": "12345678910111213",
+      "title": "Phone case for K8 Smartphone",
+      "short_title": "Case for K8 Smartphone",
+      "images_url": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80",
+        "https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+      ],
+      "specifications":
+        "Phone case for K8 smartphone",
+      "color": ["red", "blue", "white"],
+      "reviews": 1,
+      "price": 10.54,
+      "category_id": 6
     }
   ],
   "categories": [
     {
-      "id": "987",
+      "id": "1",
       "title": "Smartphones",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+      "image_url": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      "id": "9876",
-      "title": "Notebooks",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+      "id": "2",
+      "title": "Laptops",
+      "image_url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
     },
     {
-      "id": "98765",
+      "id": "3",
       "title": "Smart Watches",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+      "image_url": "https://images.unsplash.com/photo-1542541864-4abf21a55761?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=648&q=80"
     },
     {
-      "id": "987654",
+      "id": "4",
       "title": "Headphones",
-      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/camiseta-ecommerce.jpg"
+      "image_url": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1346&q=80"
+    },
+    {
+      "id": "5",
+      "title": "Phone Chargers",
+      "image_url":
+        "https://images.unsplash.com/photo-1594549181132-9045fed330ce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+    },
+    {
+      "id": "6",
+      "title": "Phone Cases",
+      "image_url":
+        "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ]
 }
