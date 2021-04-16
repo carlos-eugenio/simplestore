@@ -41,25 +41,7 @@ import {
 //   category_id: number;
 // }
 
-const products = [
-  {
-    id: '1',
-    title: 'Smartphone S1 64gb 5G NFC',
-    short_title: 'Smartphone S1 64gb 5G',
-    images_url: [
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1266&q=80',
-      'https://images.unsplash.com/photo-1560849735-f0a88439a4a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80',
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80',
-    ],
-    specifications:
-      'Hardware: 6gb ram memory, 64gb storage, Helio P90 CPU\nConnectivity: 4G / 5G network, WiFi, Bluetooth, NFC\nScreen: 6.2 inches screen, Full HD 1920 x 1080\nBattery: 4750 mah lithium-ion',
-    color: ['silver', 'black', 'red'],
-    reviews: 451,
-    quantity: 1,
-    price: 429.25,
-  },
-];
+const products = [];
 
 const Product: React.FC = () => {
   return (
@@ -104,7 +86,7 @@ const Product: React.FC = () => {
                         color="#1b1b1b"
                       />
                     </ButtonQuantity>
-                    <ProductQuantity>{item.quantity}</ProductQuantity>
+                    <ProductQuantity>1</ProductQuantity>
                     <ButtonQuantity
                       testID={`${item.id}`}
                       onPress={() => console.log(`deu${item.id}`)}>
