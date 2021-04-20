@@ -27,7 +27,7 @@ export const CategoryList = styled(
   flex: 1;
 `;
 
-export const Category = styled.View`
+export const Category = styled.TouchableOpacity`
   flex: 1;
   margin: 10px;
 `;
@@ -57,5 +57,3 @@ export const CategoryTitle = styled.Text`
   font-size: 32px;
   padding: 0 20px;
 `;
-
-export const CategoryButton = styled.TouchableOpacity``;
