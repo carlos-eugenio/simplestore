@@ -41,6 +41,12 @@ export const ProductUnselectedImage = styled.Image`
   border-radius: 10px;
 `;
 
+export const TouchableUnselectedImage = styled.TouchableOpacity`
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+`;
+
 export const ProductUnselectedImageContainer = styled.View`
   flex: 1 1;
   flex-direction: column;
@@ -157,7 +163,7 @@ export const ProductColorContainer = styled.View`
   padding: 10px 0;
 `;
 
-export const ProductColor = styled.TouchableOpacity`
+export const ProductColor = styled.View`
   height: 20px;
   width: 20px;
   border-radius: 20px;

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
+import api from '../../services/api';
 
 import FloatingCart from '../../components/FloatingCart';
 
@@ -14,26 +16,37 @@ import {
   BackgroundImageDarken,
 } from './styles';
 
-// interface Product {
-//   id: string;
-//   title: string;
-//   image_url: string;
-//   price: number;
-//   category_id: number;
-// }
-
-const products = [];
+interface ProductInterface {
+  id: string;
+  title: string;
+  images_url: Array<string>;
+  price: number;
+}
 
 const Search: React.FC = () => {
+  const [products, setProduct] = useState<ProductInterface[]>([]);
+
+  useEffect(() => {
+    async function loadProduct(): Promise<void> {
+      const response = await api.get('/products?title_like=smartphone');
+
+      setProduct(response.data);
+    }
+
+    loadProduct();
+  }, []);
+
   return (
     <Container>
       <ProductContainer>
         <ProductList
           data={products}
           keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <Product>
-              <ProductImage source={{uri: item.image_url}}>
+          renderItem={({item}: {item: ProductInterface}) => (
+            <Product
+              testID={`${item.id}`}
+              onPress={() => console.log(`deu${item.id}`)}>
+              <ProductImage source={{uri: item.images_url[0]}}>
                 <BackgroundImageDarken>
                   <TitlePriceContainer>
                     <ProductTitle>{item.title}</ProductTitle>

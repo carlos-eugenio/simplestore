@@ -1,5 +1,6 @@
-/* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+
+import api from '../../services/api';
 
 import FloatingCart from '../../components/FloatingCart';
 
@@ -31,35 +32,76 @@ import {
   ProductColorContainer,
   ProductColorText,
   ProductColor,
+  TouchableUnselectedImage,
 } from './styles';
 
-// interface Product {
-//   id: string;
-//   title: string;
-//   image_url: string;
-//   price: number;
-//   category_id: number;
-// }
-
-const products = [];
+interface ProductInterface {
+  id: string;
+  title: string;
+  images_url: Array<string>;
+  specifications: string;
+  price: number;
+  reviews: number;
+  color: string;
+}
 
 const Product: React.FC = () => {
+  const [product, setProduct] = useState<ProductInterface[]>([]);
+  const [selectedImage, setSelectedImage] = useState('');
+
+  useEffect(() => {
+    async function loadProduct(): Promise<void> {
+      const response = await api.get('/products?id=123');
+
+      setProduct(response.data);
+      setSelectedImage('0');
+    }
+
+    loadProduct();
+  }, []);
+
   return (
     <Container>
       <ProductContainer>
         <ProductList
-          data={products}
+          data={product}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
             <ProductDetails>
               <ProductGallery>
                 <ProductUnselectedImageContainer>
-                  <ProductUnselectedImage source={{uri: item.images_url[0]}} />
-                  <ProductUnselectedImage source={{uri: item.images_url[1]}} />
-                  <ProductUnselectedImage source={{uri: item.images_url[2]}} />
-                  <ProductUnselectedImage source={{uri: item.images_url[3]}} />
+                  <TouchableUnselectedImage
+                    testID={`change-image-${item.id}`}
+                    onPress={() => setSelectedImage('0')}>
+                    <ProductUnselectedImage
+                      source={{uri: item.images_url[0]}}
+                    />
+                  </TouchableUnselectedImage>
+                  <TouchableUnselectedImage
+                    testID={`change-image-${item.id}`}
+                    onPress={() => setSelectedImage('1')}>
+                    <ProductUnselectedImage
+                      source={{uri: item.images_url[1]}}
+                    />
+                  </TouchableUnselectedImage>
+                  <TouchableUnselectedImage
+                    testID={`change-image-${item.id}`}
+                    onPress={() => setSelectedImage('2')}>
+                    <ProductUnselectedImage
+                      source={{uri: item.images_url[2]}}
+                    />
+                  </TouchableUnselectedImage>
+                  <TouchableUnselectedImage
+                    testID={`change-image-${item.id}`}
+                    onPress={() => setSelectedImage('3')}>
+                    <ProductUnselectedImage
+                      source={{uri: item.images_url[3]}}
+                    />
+                  </TouchableUnselectedImage>
                 </ProductUnselectedImageContainer>
-                <ProductSelectedImage source={{uri: item.images_url[3]}} />
+                <ProductSelectedImage
+                  source={{uri: item.images_url[selectedImage]}}
+                />
               </ProductGallery>
               <ProductDescription>
                 <ProductTitle>{item.title}</ProductTitle>
@@ -115,29 +157,9 @@ const Product: React.FC = () => {
                     {item.specifications}
                   </ProductDescriptionText>
                   <ProductColorContainer>
-                    <ProductColor
-                      testID={`${item.id}`}
-                      onPress={() => console.log(`deu${item.id}`)}
-                      style={{backgroundColor: `${item.color[2]}`}}
-                    />
-                    <ProductColorText style={{color: `${item.color[2]}`}}>
-                      {item.color[2]}
-                    </ProductColorText>
-                    <ProductColor
-                      testID={`${item.id}`}
-                      onPress={() => console.log(`deu${item.id}`)}
-                      style={{backgroundColor: `${item.color[1]}`}}
-                    />
-                    <ProductColorText style={{color: `${item.color[1]}`}}>
-                      {item.color[1]}
-                    </ProductColorText>
-                    <ProductColor
-                      testID={`${item.id}`}
-                      onPress={() => console.log(`deu${item.id}`)}
-                      style={{backgroundColor: `${item.color[0]}`}}
-                    />
-                    <ProductColorText style={{color: `${item.color[0]}`}}>
-                      {item.color[0]}
+                    <ProductColor style={{backgroundColor: `${item.color}`}} />
+                    <ProductColorText style={{color: `${item.color}`}}>
+                      {item.color}
                     </ProductColorText>
                   </ProductColorContainer>
                 </ProductSpecifications>

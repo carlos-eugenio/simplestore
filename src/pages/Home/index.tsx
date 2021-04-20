@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import FloatingCart from '../../components/FloatingCart';
 
@@ -14,17 +14,35 @@ import {
   BackgroundImageDarken,
 } from './styles';
 
-const categories = [];
+interface ProductsCategory {
+  id: string;
+  title: string;
+  image_url: string;
+}
 
 const Home: React.FC = () => {
+  const [categories, setCategories] = useState<ProductsCategory[]>([]);
+
+  useEffect(() => {
+    async function loadCategories(): Promise<void> {
+      const response = await api.get('/categories');
+
+      setCategories(response.data);
+    }
+
+    loadCategories();
+  }, []);
+
   return (
     <Container>
       <CategoryContainer>
         <CategoryList
           data={categories}
           keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <Category>
+          renderItem={({item}: {item: ProductsCategory}) => (
+            <Category
+              testID={`${item.id}`}
+              onPress={() => console.log(`deu${item.id}`)}>
               <CategoryImage source={{uri: item.image_url}}>
                 <BackgroundImageDarken>
                   <CategoryTitle>{item.title}</CategoryTitle>
