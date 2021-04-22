@@ -29,7 +29,7 @@ export const ProductList = styled(
   flex: 1;
 `;
 
-export const Product = styled.View`
+export const Product = styled.TouchableOpacity`
   background: #000;
   border-radius: 10px;
   flex: 1;

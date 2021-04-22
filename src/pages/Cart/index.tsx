@@ -6,6 +6,8 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import {useCart} from '../../hooks/cart';
 
+import {useNavigation} from '@react-navigation/native';
+
 import {
   Container,
   ProductContainer,
@@ -37,6 +39,8 @@ interface ProductInterface {
 const Cart: React.FC = () => {
   const {addToCart, removeFromCart, products} = useCart();
 
+  const navigation = useNavigation();
+
   function handleAddToCart(item: ProductInterface): void {
     addToCart(item);
   }
@@ -52,7 +56,13 @@ const Cart: React.FC = () => {
           data={products}
           keyExtractor={item => item.id}
           renderItem={({item}: {item: ProductInterface}) => (
-            <Product>
+            <Product
+              testID="navigate-to-product"
+              onPress={() =>
+                navigation.navigate('Product', {
+                  productId: item.id,
+                })
+              }>
               <ProductImage source={{uri: item.images_url[0]}}>
                 <BackgroundImageDarken>
                   <ProductDetailsContainer>
