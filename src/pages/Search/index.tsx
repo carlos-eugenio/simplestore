@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
+import {useNavigation} from '@react-navigation/native';
+
 import api from '../../services/api';
 
 import FloatingCart from '../../components/FloatingCart';
@@ -23,18 +25,22 @@ interface ProductInterface {
   price: number;
 }
 
-const Search: React.FC = () => {
+const Search: React.FC = ({route}) => {
   const [products, setProduct] = useState<ProductInterface[]>([]);
+
+  const navigation = useNavigation();
+
+  const {searchTitle} = route.params;
 
   useEffect(() => {
     async function loadProduct(): Promise<void> {
-      const response = await api.get('/products?title_like=smartphone');
+      const response = await api.get(`/products?title_like=${searchTitle}`);
 
       setProduct(response.data);
     }
 
     loadProduct();
-  }, []);
+  }, [searchTitle]);
 
   return (
     <Container>
@@ -44,8 +50,12 @@ const Search: React.FC = () => {
           keyExtractor={item => item.id}
           renderItem={({item}: {item: ProductInterface}) => (
             <Product
-              testID={`${item.id}`}
-              onPress={() => console.log(`deu${item.id}`)}>
+              testID="navigate-to-product"
+              onPress={() =>
+                navigation.navigate('Product', {
+                  productId: item.id,
+                })
+              }>
               <ProductImage source={{uri: item.images_url[0]}}>
                 <BackgroundImageDarken>
                   <TitlePriceContainer>

@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
-import FloatingCart from '../../components/FloatingCart';
+import {useNavigation} from '@react-navigation/native';
 
 import api from '../../services/api';
+
+import FloatingCart from '../../components/FloatingCart';
 
 import {
   Container,
@@ -17,11 +19,14 @@ import {
 interface ProductsCategory {
   id: string;
   title: string;
+  search_title: string;
   image_url: string;
 }
 
 const Home: React.FC = () => {
   const [categories, setCategories] = useState<ProductsCategory[]>([]);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function loadCategories(): Promise<void> {
@@ -41,8 +46,12 @@ const Home: React.FC = () => {
           keyExtractor={item => item.id}
           renderItem={({item}: {item: ProductsCategory}) => (
             <Category
-              testID={`${item.id}`}
-              onPress={() => console.log(`deu${item.id}`)}>
+              testID="navigate-to-search"
+              onPress={() =>
+                navigation.navigate('Search', {
+                  searchTitle: item.search_title,
+                })
+              }>
               <CategoryImage source={{uri: item.image_url}}>
                 <BackgroundImageDarken>
                   <CategoryTitle>{item.title}</CategoryTitle>

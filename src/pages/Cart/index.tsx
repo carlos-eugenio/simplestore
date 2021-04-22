@@ -4,6 +4,8 @@ import FloatingCart from '../../components/FloatingCart';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
+import {useCart} from '../../hooks/cart';
+
 import {
   Container,
   ProductContainer,
@@ -20,26 +22,38 @@ import {
   ProductQuantity,
 } from './styles';
 
-// interface Product {
-//   id: string;
-//   title: string;
-//   image_url: string;
-//   price: number;
-//   category_id: number;
-// }
-
-const products = [];
+interface ProductInterface {
+  id: string;
+  title: string;
+  short_title: string;
+  images_url: Array<string>;
+  specifications: string;
+  price: number;
+  reviews: number;
+  color: string;
+  quantity: number;
+}
 
 const Cart: React.FC = () => {
+  const {addToCart, removeFromCart, products} = useCart();
+
+  function handleAddToCart(item: ProductInterface): void {
+    addToCart(item);
+  }
+
+  function handleRemoveFromCart(item: ProductInterface): void {
+    removeFromCart(item);
+  }
+
   return (
     <Container>
       <ProductContainer>
         <ProductList
           data={products}
           keyExtractor={item => item.id}
-          renderItem={({item}) => (
+          renderItem={({item}: {item: ProductInterface}) => (
             <Product>
-              <ProductImage source={{uri: item.image_url}}>
+              <ProductImage source={{uri: item.images_url[0]}}>
                 <BackgroundImageDarken>
                   <ProductDetailsContainer>
                     <ProductColor
@@ -47,22 +61,24 @@ const Cart: React.FC = () => {
                       onPress={() => console.log(`deu${item.id}`)}
                       style={{backgroundColor: `${item.color}`}}
                     />
-                    <ProductTitle>{item.title}</ProductTitle>
-                    <ProductPrice>$ {item.price}</ProductPrice>
+                    <ProductTitle>{item.short_title}</ProductTitle>
+                    <ProductPrice>
+                      $ {(item.price * item.quantity).toFixed(2)}
+                    </ProductPrice>
                     <ProductQuantityContainer>
                       <ButtonQuantity
-                        testID={`${item.id}`}
-                        onPress={() => console.log(`deu${item.id}`)}>
+                        testID={`increment-${item.id}`}
+                        onPress={() => handleAddToCart(item)}>
                         <FeatherIcon
                           size={24}
                           name="plus-square"
                           color="#fff"
                         />
                       </ButtonQuantity>
-                      <ProductQuantity>1</ProductQuantity>
+                      <ProductQuantity>{item.quantity}</ProductQuantity>
                       <ButtonQuantity
-                        testID={`${item.id}`}
-                        onPress={() => console.log(`deu${item.id}`)}>
+                        testID={`decrement-${item.id}`}
+                        onPress={() => handleRemoveFromCart(item)}>
                         <FeatherIcon
                           size={24}
                           name="minus-square"
