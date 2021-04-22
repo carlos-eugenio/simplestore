@@ -20,14 +20,11 @@ import {
   ProductDescriptionText,
   ProductSpecifications,
   ProductTitle,
-  ProductQuantity,
   ProductPrice,
-  ProductQuantityContainer,
-  ButtonQuantity,
   ProductReviewContainer,
   ProductReviewIcon,
   ProductReviewText,
-  ProductQuantityPriceCartContainer,
+  ProductPriceCartContainer,
   ProductAddToCartText,
   ProductAddToCartButton,
   ProductColorContainer,
@@ -47,7 +44,7 @@ interface ProductInterface {
 }
 
 const Product: React.FC = ({route}) => {
-  const {addToCart, removeFromCart} = useCart();
+  const {addToCart} = useCart();
   const [product, setProduct] = useState<ProductInterface[]>([]);
   const [selectedImage, setSelectedImage] = useState('');
 
@@ -62,15 +59,10 @@ const Product: React.FC = ({route}) => {
     }
 
     loadProduct();
-    //verificar aqui se produto está no cart e mostrar quantidade e preço
   }, [productId]);
 
   function handleAddToCart(item: ProductInterface): void {
     addToCart(item);
-  }
-
-  function handleRemoveFromCart(item: ProductInterface): void {
-    removeFromCart(item);
   }
 
   return (
@@ -130,35 +122,14 @@ const Product: React.FC = ({route}) => {
                   <ProductReviewText>{item.reviews} reviews</ProductReviewText>
                 </ProductReviewContainer>
 
-                <ProductQuantityPriceCartContainer>
-                  <ProductQuantityContainer>
-                    <ButtonQuantity
-                      testID={`increment-${item.id}`}
-                      onPress={() => handleAddToCart(item)}>
-                      <FeatherIcon
-                        size={24}
-                        name="plus-square"
-                        color="#1b1b1b"
-                      />
-                    </ButtonQuantity>
-                    <ProductQuantity>1</ProductQuantity>
-                    <ButtonQuantity
-                      testID={`decrement-${item.id}`}
-                      onPress={() => handleRemoveFromCart(item)}>
-                      <FeatherIcon
-                        size={24}
-                        name="minus-square"
-                        color="#1b1b1b"
-                      />
-                    </ButtonQuantity>
-                  </ProductQuantityContainer>
+                <ProductPriceCartContainer>
                   <ProductPrice>$ {item.price}</ProductPrice>
                   <ProductAddToCartButton
                     testID={`add-to-cart-${item.id}`}
                     onPress={() => handleAddToCart(item)}>
                     <ProductAddToCartText>Add to Cart</ProductAddToCartText>
                   </ProductAddToCartButton>
-                </ProductQuantityPriceCartContainer>
+                </ProductPriceCartContainer>
 
                 <ProductSpecifications>
                   <ProductDescriptionText

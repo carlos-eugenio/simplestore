@@ -118,26 +118,10 @@ export const ProductReviewText = styled.Text`
   line-height: 18px;
 `;
 
-export const ProductQuantityPriceCartContainer = styled.View`
+export const ProductPriceCartContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;
-
-export const ProductQuantityContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const ProductQuantity = styled.Text`
-  color: #1b1b1b;
-  font-family: 'RobotoCondensed-Bold';
-  font-size: 20px;
-  padding: 0 5px 0 5px;
-  line-height: 25px;
-`;
-
-export const ButtonQuantity = styled.TouchableOpacity``;
 
 export const ProductPrice = styled.Text`
   color: #1b1b1b;
