@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
+import {ActivityIndicator} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
 
 import api from '../../services/api';
 
 import FloatingCart from '../../components/FloatingCart';
+
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import {
   Container,
@@ -16,6 +19,9 @@ import {
   TitlePriceContainer,
   ProductPrice,
   BackgroundImageDarken,
+  NoResults,
+  NoResultsContainer,
+  LoadingIndicator,
 } from './styles';
 
 interface ProductInterface {
@@ -27,6 +33,7 @@ interface ProductInterface {
 
 const Search: React.FC = ({route}) => {
   const [products, setProduct] = useState<ProductInterface[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const navigation = useNavigation();
 
@@ -35,8 +42,8 @@ const Search: React.FC = ({route}) => {
   useEffect(() => {
     async function loadProduct(): Promise<void> {
       const response = await api.get(`/products?title_like=${searchTitle}`);
-
       setProduct(response.data);
+      setLoading(false);
     }
 
     loadProduct();
@@ -45,28 +52,39 @@ const Search: React.FC = ({route}) => {
   return (
     <Container>
       <ProductContainer>
-        <ProductList
-          data={products}
-          keyExtractor={item => item.id}
-          renderItem={({item}: {item: ProductInterface}) => (
-            <Product
-              testID="navigate-to-product"
-              onPress={() =>
-                navigation.navigate('Product', {
-                  productId: item.id,
-                })
-              }>
-              <ProductImage source={{uri: item.images_url[0]}}>
-                <BackgroundImageDarken>
-                  <TitlePriceContainer>
-                    <ProductTitle>{item.title}</ProductTitle>
-                    <ProductPrice>$ {item.price}</ProductPrice>
-                  </TitlePriceContainer>
-                </BackgroundImageDarken>
-              </ProductImage>
-            </Product>
-          )}
-        />
+        {loading ? (
+          <LoadingIndicator>
+            <ActivityIndicator size="large" color="#1b1b1b" />
+          </LoadingIndicator>
+        ) : products.length ? (
+          <ProductList
+            data={products}
+            keyExtractor={item => item.id}
+            renderItem={({item}: {item: ProductInterface}) => (
+              <Product
+                testID="navigate-to-product"
+                onPress={() =>
+                  navigation.navigate('Product', {
+                    productId: item.id,
+                  })
+                }>
+                <ProductImage source={{uri: item.images_url[0]}}>
+                  <BackgroundImageDarken>
+                    <TitlePriceContainer>
+                      <ProductTitle>{item.title}</ProductTitle>
+                      <ProductPrice>$ {item.price}</ProductPrice>
+                    </TitlePriceContainer>
+                  </BackgroundImageDarken>
+                </ProductImage>
+              </Product>
+            )}
+          />
+        ) : (
+          <NoResultsContainer>
+            <FeatherIcon size={50} name="cloud-off" color="#1b1b1b" />
+            <NoResults>No results found!</NoResults>
+          </NoResultsContainer>
+        )}
       </ProductContainer>
       <FloatingCart />
     </Container>

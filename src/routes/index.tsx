@@ -14,13 +14,12 @@ const Routes = createStackNavigator();
 const AppRoutes: React.FC = () => (
   <Routes.Navigator
     initialRouteName="Home"
+    headerMode="float"
     screenOptions={{
-      headerStyle: {
-        height: 60,
-        backgroundColor: '#f6f6f6',
-      },
-      headerTitle: () => <Header />,
+      header: () => <Header />,
+      headerTransparent: true,
       cardStyle: {backgroundColor: '#f6f6f6'},
+      headerStyle: {backgroundColor: '#f6f6f6'},
     }}>
     <Routes.Screen name="Home" component={Home} />
     <Routes.Screen name="Cart" component={Cart} />
