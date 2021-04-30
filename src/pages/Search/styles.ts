@@ -18,7 +18,7 @@ export const ProductContainer = styled.View`
   flex: 1;
   flex-direction: row;
   margin: 0 10px;
-  padding-bottom: 60px;
+  padding: 60px 0;
 `;
 
 export const ProductList = styled(
@@ -73,4 +73,22 @@ export const ProductPrice = styled.Text`
   color: #fff;
   font-family: 'RobotoCondensed-Regular';
   padding-top: 5px;
+`;
+
+export const NoResults = styled.Text`
+  align-self: center;
+  font-size: 24px;
+  color: #1b1b1b;
+  font-family: 'RobotoCondensed-Bold';
+`;
+
+export const NoResultsContainer = styled.View`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LoadingIndicator = styled.View`
+  justify-content: center;
+  align-items: center;
 `;

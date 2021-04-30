@@ -18,7 +18,7 @@ export const ProductContainer = styled.View`
   flex: 1;
   flex-direction: row;
   margin: 0 10px;
-  padding-bottom: 60px;
+  padding: 60px 0;
 `;
 
 export const ProductList = styled(
@@ -29,7 +29,7 @@ export const ProductList = styled(
   flex: 1;
 `;
 
-export const Product = styled.View`
+export const Product = styled.TouchableOpacity`
   background: #000;
   border-radius: 10px;
   flex: 1;

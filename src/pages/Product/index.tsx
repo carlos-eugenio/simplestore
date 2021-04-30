@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import api from '../../services/api';
 
+import {useCart} from '../../hooks/cart';
 import FloatingCart from '../../components/FloatingCart';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -19,14 +20,11 @@ import {
   ProductDescriptionText,
   ProductSpecifications,
   ProductTitle,
-  ProductQuantity,
   ProductPrice,
-  ProductQuantityContainer,
-  ButtonQuantity,
   ProductReviewContainer,
   ProductReviewIcon,
   ProductReviewText,
-  ProductQuantityPriceCartContainer,
+  ProductPriceCartContainer,
   ProductAddToCartText,
   ProductAddToCartButton,
   ProductColorContainer,
@@ -45,20 +43,27 @@ interface ProductInterface {
   color: string;
 }
 
-const Product: React.FC = () => {
+const Product: React.FC = ({route}) => {
+  const {addToCart} = useCart();
   const [product, setProduct] = useState<ProductInterface[]>([]);
   const [selectedImage, setSelectedImage] = useState('');
 
+  const {productId} = route.params;
+
   useEffect(() => {
     async function loadProduct(): Promise<void> {
-      const response = await api.get('/products?id=123');
+      const response = await api.get(`/products?id=${productId}`);
 
       setProduct(response.data);
       setSelectedImage('0');
     }
 
     loadProduct();
-  }, []);
+  }, [productId]);
+
+  function handleAddToCart(item: ProductInterface): void {
+    addToCart(item);
+  }
 
   return (
     <Container>
@@ -117,35 +122,14 @@ const Product: React.FC = () => {
                   <ProductReviewText>{item.reviews} reviews</ProductReviewText>
                 </ProductReviewContainer>
 
-                <ProductQuantityPriceCartContainer>
-                  <ProductQuantityContainer>
-                    <ButtonQuantity
-                      testID={`${item.id}`}
-                      onPress={() => console.log(`deu${item.id}`)}>
-                      <FeatherIcon
-                        size={24}
-                        name="plus-square"
-                        color="#1b1b1b"
-                      />
-                    </ButtonQuantity>
-                    <ProductQuantity>1</ProductQuantity>
-                    <ButtonQuantity
-                      testID={`${item.id}`}
-                      onPress={() => console.log(`deu${item.id}`)}>
-                      <FeatherIcon
-                        size={24}
-                        name="minus-square"
-                        color="#1b1b1b"
-                      />
-                    </ButtonQuantity>
-                  </ProductQuantityContainer>
+                <ProductPriceCartContainer>
                   <ProductPrice>$ {item.price}</ProductPrice>
                   <ProductAddToCartButton
-                    testID={`${item.id}`}
-                    onPress={() => console.log(`deu${item.id}`)}>
+                    testID={`add-to-cart-${item.id}`}
+                    onPress={() => handleAddToCart(item)}>
                     <ProductAddToCartText>Add to Cart</ProductAddToCartText>
                   </ProductAddToCartButton>
-                </ProductQuantityPriceCartContainer>
+                </ProductPriceCartContainer>
 
                 <ProductSpecifications>
                   <ProductDescriptionText
