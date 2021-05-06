@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 
 import api from '../../services/api';
 
 import {useCart} from '../../hooks/cart';
 import FloatingCart from '../../components/FloatingCart';
+
+import useFavorites from '../../hooks/favorites';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
@@ -31,6 +33,7 @@ import {
   ProductColorText,
   ProductColor,
   TouchableUnselectedImage,
+  TouchableFavorite,
 } from './styles';
 
 interface ProductInterface {
@@ -43,10 +46,15 @@ interface ProductInterface {
   color: string;
 }
 
-const Product: React.FC = ({route}) => {
+interface RouteNavigation {
+  [key: string]: any;
+}
+
+const Product: React.FC<RouteNavigation> = ({route}) => {
   const {addToCart} = useCart();
+  const {favorites, addRemoveFavorites} = useFavorites();
   const [product, setProduct] = useState<ProductInterface[]>([]);
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState<number>(0);
 
   const {productId} = route.params;
 
@@ -55,7 +63,6 @@ const Product: React.FC = ({route}) => {
       const response = await api.get(`/products?id=${productId}`);
 
       setProduct(response.data);
-      setSelectedImage('0');
     }
 
     loadProduct();
@@ -65,48 +72,68 @@ const Product: React.FC = ({route}) => {
     addToCart(item);
   }
 
+  const handleAddRemoveFavorites = useCallback(
+    (item: ProductInterface): void => {
+      addRemoveFavorites(item);
+    },
+    [addRemoveFavorites],
+  );
+
   return (
     <Container>
       <ProductContainer>
         <ProductList
           data={product}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => (
+          keyExtractor={(item: ProductInterface) => item.id}
+          renderItem={({item}: {item: ProductInterface}) => (
             <ProductDetails>
               <ProductGallery>
                 <ProductUnselectedImageContainer>
                   <TouchableUnselectedImage
                     testID={`change-image-${item.id}`}
-                    onPress={() => setSelectedImage('0')}>
+                    onPress={() => setSelectedImage(0)}>
                     <ProductUnselectedImage
                       source={{uri: item.images_url[0]}}
                     />
                   </TouchableUnselectedImage>
                   <TouchableUnselectedImage
                     testID={`change-image-${item.id}`}
-                    onPress={() => setSelectedImage('1')}>
+                    onPress={() => setSelectedImage(1)}>
                     <ProductUnselectedImage
                       source={{uri: item.images_url[1]}}
                     />
                   </TouchableUnselectedImage>
                   <TouchableUnselectedImage
                     testID={`change-image-${item.id}`}
-                    onPress={() => setSelectedImage('2')}>
+                    onPress={() => setSelectedImage(2)}>
                     <ProductUnselectedImage
                       source={{uri: item.images_url[2]}}
                     />
                   </TouchableUnselectedImage>
                   <TouchableUnselectedImage
                     testID={`change-image-${item.id}`}
-                    onPress={() => setSelectedImage('3')}>
+                    onPress={() => setSelectedImage(3)}>
                     <ProductUnselectedImage
                       source={{uri: item.images_url[3]}}
                     />
                   </TouchableUnselectedImage>
                 </ProductUnselectedImageContainer>
                 <ProductSelectedImage
-                  source={{uri: item.images_url[selectedImage]}}
-                />
+                  source={{uri: item.images_url[selectedImage]}}>
+                  <TouchableFavorite
+                    testID={`add-remove-favorite-${item.id}`}
+                    onPress={() => handleAddRemoveFavorites(item)}>
+                    <FeatherIcon
+                      size={46}
+                      name="heart"
+                      color={
+                        favorites.find(p => p.id === item.id)
+                          ? '#BD9F00'
+                          : '#6a6a6a'
+                      }
+                    />
+                  </TouchableFavorite>
+                </ProductSelectedImage>
               </ProductGallery>
               <ProductDescription>
                 <ProductTitle>{item.title}</ProductTitle>
