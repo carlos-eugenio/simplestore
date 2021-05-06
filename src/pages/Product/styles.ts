@@ -28,11 +28,14 @@ export const ProductGallery = styled.View`
   height: 314px;
 `;
 
-export const ProductSelectedImage = styled.Image`
+export const ProductSelectedImage = styled.ImageBackground`
   flex: 3 1;
   width: 275px;
   height: 314px;
   border-radius: 10px;
+  overflow: hidden;
+  align-items: flex-end;
+  flex-direction: row;
 `;
 
 export const ProductUnselectedImage = styled.Image`
@@ -157,4 +160,10 @@ export const ProductColorText = styled.Text`
   font-family: 'RobotoCondensed-Bold';
   margin-right: 10px;
   margin-left: 5px;
+`;
+
+export const TouchableFavorite = styled.TouchableOpacity`
+  width: 46px;
+  height: 46px;
+  margin: 0px 0px 20px 200px;
 `;

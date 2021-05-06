@@ -43,7 +43,7 @@ const Home: React.FC = () => {
       <CategoryContainer>
         <CategoryList
           data={categories}
-          keyExtractor={item => item.id}
+          keyExtractor={(item: ProductsCategory) => item.id}
           renderItem={({item}: {item: ProductsCategory}) => (
             <Category
               testID="navigate-to-search"

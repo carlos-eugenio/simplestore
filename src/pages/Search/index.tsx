@@ -31,7 +31,11 @@ interface ProductInterface {
   price: number;
 }
 
-const Search: React.FC = ({route}) => {
+interface RouteNavigation {
+  [key: string]: any;
+}
+
+const Search: React.FC<RouteNavigation> = ({route}) => {
   const [products, setProduct] = useState<ProductInterface[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -59,7 +63,7 @@ const Search: React.FC = ({route}) => {
         ) : products.length ? (
           <ProductList
             data={products}
-            keyExtractor={item => item.id}
+            keyExtractor={(item: ProductInterface) => item.id}
             renderItem={({item}: {item: ProductInterface}) => (
               <Product
                 testID="navigate-to-product"

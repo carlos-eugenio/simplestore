@@ -33,7 +33,7 @@ const CartProvider: React.FC = ({children}) => {
   useEffect(() => {
     async function loadProducts(): Promise<void> {
       const storagedProducts = await AsyncStorage.getItem(
-        '@GoMarketplace:products',
+        '@SimpleStore:products',
       );
 
       if (storagedProducts) {
@@ -59,7 +59,7 @@ const CartProvider: React.FC = ({children}) => {
       }
 
       await AsyncStorage.setItem(
-        '@GoMarketplace:products',
+        '@SimpleStore:products',
         JSON.stringify(products),
       );
     },
@@ -81,7 +81,7 @@ const CartProvider: React.FC = ({children}) => {
       }
 
       await AsyncStorage.setItem(
-        '@GoMarketplace:products',
+        '@SimpleStore:products',
         JSON.stringify(products),
       );
     },

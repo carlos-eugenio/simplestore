@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           <ButtonFavorites
             testID="navigate-to-favorites"
             onPress={() => navigation.navigate('Favorites')}>
-            <FeatherIcon size={28} name="star" color="#1b1b1b" />
+            <FeatherIcon size={28} name="heart" color="#1b1b1b" />
           </ButtonFavorites>
         </SearchFavoritesContainer>
       </Container>

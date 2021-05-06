@@ -54,7 +54,7 @@ const Cart: React.FC = () => {
       <ProductContainer>
         <ProductList
           data={products}
-          keyExtractor={item => item.id}
+          keyExtractor={(item: ProductInterface) => item.id}
           renderItem={({item}: {item: ProductInterface}) => (
             <Product
               testID="navigate-to-product"

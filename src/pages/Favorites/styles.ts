@@ -29,7 +29,7 @@ export const ProductList = styled(
   flex: 1;
 `;
 
-export const Product = styled.View`
+export const Product = styled.TouchableOpacity`
   background: #000;
   border-radius: 10px;
   flex: 1;
@@ -49,29 +49,40 @@ export const BackgroundImageDarken = styled.View`
   height: 100%;
   flex: 1;
   background-color: 'rgba(0,0,0, 0.30)';
-  flex-direction: row;
+`;
+
+export const TitleFavoritesContainer = styled.View`
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px;
+`;
+
+export const ProductTitle = styled.Text`
+  color: #fff;
+  font-family: 'RobotoCondensed-Regular';
+  font-size: 18px;
+  padding: 10px 0px;
+`;
+
+export const ProductFavorite = styled.TouchableOpacity`
+  align-self: flex-start;
+`;
+
+export const NoResults = styled.Text`
+  align-self: center;
+  font-size: 24px;
+  color: #1b1b1b;
+  font-family: 'RobotoCondensed-Bold';
+`;
+
+export const NoResultsContainer = styled.View`
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-export const ButtonFavoriteTitleContainer = styled.View`
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-export const ProductTitle = styled.Text`
-  flex-direction: row;
-  align-self: flex-start;
-  padding: 60px 20px 30px 20px;
-  color: #fff;
-  font-family: 'RobotoCondensed-Regular';
-  font-size: 18px;
-`;
-
-export const ButtonAddFavorite = styled.TouchableOpacity`
-  flex-direction: row;
-  align-self: flex-end;
-  padding: 10px 10px 60px 10px;
-  color: #fff;
+export const LoadingIndicator = styled.View`
+  justify-content: center;
+  align-items: center;
 `;
